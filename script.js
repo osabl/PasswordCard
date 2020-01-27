@@ -11,3 +11,9 @@ const DEFAULT_DECOR = {
 };
 const DEFAULT_CHUNK_LENGTH = 8;
 
+
+function Character(char, color, figure) {
+    this.char = char;
+    this.color = color;
+    this.figure = figure;
+}
