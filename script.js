@@ -17,7 +17,6 @@ const DEFAULT_REQUIREMENTS = {
     symbols: true,
     colors: true,
     figures: true,
-    [chunkLength]: 8,
 }
 
 
@@ -40,10 +39,6 @@ function getShuffle(arr) {
 }
 
 function isChunkCorrect(chunk, requirements, templates) {
-    if (chunk.length != requirements[chunkLength]) {
-        return false;
-    }
-    
     let isIncludes = function(chunk, template) {
         for (const value of template) {
             if (chunk.includes(value)) {
