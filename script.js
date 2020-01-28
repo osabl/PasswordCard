@@ -22,11 +22,34 @@ const DEFAULT_REQUIREMENTS = {
 }
 
 
-function Character(char, color, figure) {
-    this.char = char;
-    this.color = color;
-    this.figure = figure;
+class Character {
+    constructor(char, color, figure) {
+        this.char = char;
+        this.color = color;
+        this.figure = figure;
+    }
+
+class Template {
+    constructor(requirements, templates) {
+        for (const key in requirements) {
+            //to enter the object
+            if (typeof requirements[key] == 'object' && typeof templates[key] == 'object') {
+                this[key] = '';
+                for (const prop in requirements[key]) {
+                    if (requirements[key][prop]) {
+                        this[key] += templates[key][prop];
+                    }
+                }
+                continue;
+            }
+
+            if (requirements[key]) {
+                this[key] = templates[key];
+            }
+        }
+    }
 }
+
 
 function pullRandomly(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
