@@ -73,12 +73,7 @@ function isChunkCorrect(chunk, template) {
             } else {
                 return false;
             }
-        } else {
-            if (isIncludes(chunk, templates[key])) {
-                return false;
         }
     }
-    return true;
-}
     return true;
 }
