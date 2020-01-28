@@ -17,3 +17,15 @@ function Character(char, color, figure) {
     this.color = color;
     this.figure = figure;
 }
+
+function pullRandomly(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getShuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * arr.length);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
