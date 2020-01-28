@@ -1,6 +1,7 @@
 "use strict";
 
 const PASSWORD_LENGTH = 260;
+const DEFAULT_CHUNK_LENGTH = 12;
 const DEFAULT_TEMPLATES = {
     char: {
         upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
