@@ -54,12 +54,35 @@ class Template {
 }
 
 
-function pullRandomly(array) {
-    return array[Math.floor(Math.random() * arr.length)];
+function getRandomChunk(template, chunkLength) {
+    const chunk = [];
+    console.log('generated');
+    let {
+        char,
+        color,
+        figure
+    } = template;
+    char = getShuffle(char);
+    color = getShuffle(color);
+    figure = getShuffle(figure);
+
+    for (let i = 0; i < chunkLength; i++) {
+        chunk.push(new Character(
+            pullRandom(char),
+            pullRandom(color),
+            pullRandom(figure)
+        ));
+    }
+
+    return isChunkCorrect(chunk, template) ? chunk : getRandomChunk(template, chunkLength);
+}
+
+function pullRandom(array) {
+    return array[Math.floor(Math.random() * array.length)];
 }
 
 function getShuffle(array) {
-    const arr = array; 
+    const arr = array;
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * arr.length);
         [arr[i], arr[j]] = [arr[j], arr[i]];
