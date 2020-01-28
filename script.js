@@ -1,3 +1,5 @@
+"use strict";
+
 const PASSWORD_LENGTH = 260;
 const DEFAULT_TEMPLATES = {
     char: {
@@ -6,9 +8,8 @@ const DEFAULT_TEMPLATES = {
         numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
         symbols: ['!', '@', '#', '$', '%', '^', '&', '*'],
     },
-    colors: ['red', 'blue', 'yellow', 'green', 'black', 'white', 'purple', 'gray'],
-    figures: ['lineUP', 'triengleDOWN', 'lineLEFT', 'lineRIGHT'],
-    
+    color: ['red', 'blue', 'yellow', 'green', 'black', 'white', 'purple', 'gray'],
+    figure: ['lineUP', 'triengleDOWN', 'lineLEFT', 'lineRIGHT'],
 };
 const DEFAULT_REQUIREMENTS = {
     char: {
@@ -17,8 +18,8 @@ const DEFAULT_REQUIREMENTS = {
         numbers: true,
         symbols: true,
     },
-    colors: true,
-    figures: true,
+    color: true,
+    figure: true,
 }
 
 
@@ -28,6 +29,7 @@ class Character {
         this.color = color;
         this.figure = figure;
     }
+}
 
 class Template {
     constructor(requirements, templates) {
@@ -74,8 +76,9 @@ function isChunkCorrect(chunk, template) {
         } else {
             if (isIncludes(chunk, templates[key])) {
                 return false;
-            }
         }
     }
+    return true;
+}
     return true;
 }
