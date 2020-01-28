@@ -54,11 +54,12 @@ class Template {
 }
 
 
-function pullRandomly(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+function pullRandomly(array) {
+    return array[Math.floor(Math.random() * arr.length)];
 }
 
-function getShuffle(arr) {
+function getShuffle(array) {
+    const arr = array; 
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * arr.length);
         [arr[i], arr[j]] = [arr[j], arr[i]];
