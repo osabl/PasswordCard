@@ -36,10 +36,10 @@ class Template {
         for (const key in requirements) {
             //to enter the object
             if (typeof requirements[key] == 'object' && typeof templates[key] == 'object') {
-                this[key] = '';
+                this[key] = [];
                 for (const prop in requirements[key]) {
                     if (requirements[key][prop]) {
-                        this[key] += templates[key][prop];
+                        this[key] = this[key].concat(templates[key][prop]);
                     }
                 }
                 continue;
