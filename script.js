@@ -63,19 +63,10 @@ function getShuffle(arr) {
     return arr;
 }
 
-function isChunkCorrect(chunk, requirements, templates) {
-    let isIncludes = function(chunk, template) {
-        for (const value of template) {
-            if (chunk.includes(value)) {
-                return true;
-            }
-        }
-        return false;
-    };
-
-    for (const key in requirements) {
-        if (requirements[key]) {
-            if (isIncludes(chunk, templates[key])) {
+function isChunkCorrect(chunk, template) {
+    for (const obj of chunk) {
+        for (const key in template) {
+            if (template[key].includes(obj[key])) {
                 continue;
             } else {
                 return false;
