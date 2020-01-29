@@ -48,8 +48,23 @@ function Template(requirements, templates) {
         }
     }
 }
-}
 
+
+function generateFullPassword(requirements, templates, chunkLength) {
+    const templ = new Template(requirements, templates);
+    const numberOfChunks = Math.ceil(PASSWORD_LENGTH / chunkLength);
+
+    let fullPassword = [];
+
+    for (let i = 0; i < numberOfChunks; i++) {
+        fullPassword = fullPassword.concat(getRandomChunk(requirements, templates, templ, chunkLength));
+    }
+
+    //cropping the array
+    fullPassword.length = PASSWORD_LENGTH;
+
+    return fullPassword;
+}
 
 function getRandomChunk(requirements, templates, template, chunkLength) {
     const chunk = [];
