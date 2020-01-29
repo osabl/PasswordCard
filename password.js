@@ -48,6 +48,20 @@ function Template(requirements, templates) {
     }
 }
 
+
+function generateHeader(charPattern, colorPattern, figurePattern) {
+    const header = [];
+
+    for (const char of charPattern) {
+        header.push(new Character(
+            char,
+            pullRandom(colorPattern),
+            pullRandom(figurePattern)
+        ));
+    }
+    return header;
+}
+
 function generateFullPassword(requirements, templates, chunkLength) {
     const templ = new Template(requirements, templates);
     const numberOfChunks = Math.ceil(PASSWORD_LENGTH / chunkLength);
