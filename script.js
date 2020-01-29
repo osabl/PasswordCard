@@ -24,39 +24,36 @@ const DEFAULT_REQUIREMENTS = {
 }
 
 
-class Character {
-    constructor(char, color, figure) {
-        this.char = char;
-        this.color = color;
-        this.figure = figure;
-    }
+function Character(char, color, figure) {
+    this.char = char;
+    this.color = color;
+    this.figure = figure;
 }
 
-class Template {
-    constructor(requirements, templates) {
-        for (const key in requirements) {
-            //to enter the object
-            if (typeof requirements[key] == 'object' && typeof templates[key] == 'object') {
-                this[key] = [];
-                for (const prop in requirements[key]) {
-                    if (requirements[key][prop]) {
-                        this[key] = this[key].concat(templates[key][prop]);
-                    }
+function Template(requirements, templates) {
+    for (const key in requirements) {
+        //to enter the object
+        if (typeof requirements[key] == 'object' && typeof templates[key] == 'object') {
+            this[key] = [];
+            for (const prop in requirements[key]) {
+                if (requirements[key][prop]) {
+                    this[key] = this[key].concat(templates[key][prop]);
                 }
-                continue;
             }
+            continue;
+        }
 
-            if (requirements[key]) {
-                this[key] = templates[key];
-            }
+        if (requirements[key]) {
+            this[key] = templates[key];
         }
     }
 }
+}
 
 
-function getRandomChunk(template, chunkLength) {
+function getRandomChunk(requirements, templates, template, chunkLength) {
     const chunk = [];
-    console.log('generated');
+
     let {
         char,
         color,
@@ -67,14 +64,15 @@ function getRandomChunk(template, chunkLength) {
     figure = getShuffle(figure);
 
     for (let i = 0; i < chunkLength; i++) {
-        chunk.push(new Character(
+        const character = new Character(
             pullRandom(char),
             pullRandom(color),
             pullRandom(figure)
-        ));
+        );
+        chunk.push(character);
     }
 
-    return isChunkCorrect(chunk, template) ? chunk : getRandomChunk(template, chunkLength);
+    return isChunkCorrect(chunk, requirements, templates) ? chunk : getRandomChunk(requirements, templates, template, chunkLength);
 }
 
 function pullRandom(array) {
