@@ -90,10 +90,11 @@ function getShuffle(array) {
     return arr;
 }
 
-function isChunkCorrect(chunk, template) {
-    for (const obj of chunk) {
-        for (const key in template) {
-            if (template[key].includes(obj[key])) {
+//checking char only    
+function isChunkCorrect(chunk, requirements, templates) {
+    for (const demand in requirements.char) {
+        if (requirements.char[demand]) {
+            if (isMet(chunk, templates.char[demand])) {
                 continue;
             } else {
                 return false;
@@ -101,4 +102,15 @@ function isChunkCorrect(chunk, template) {
         }
     }
     return true;
+}
+
+function isMet(chunk, template) {
+    for (const obj of chunk) {
+        for (const char of template) {
+            if (obj.char == char) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
