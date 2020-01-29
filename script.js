@@ -10,7 +10,7 @@ const DEFAULT_TEMPLATES = {
         symbols: ['!', '@', '#', '$', '%', '^', '&', '*'],
     },
     color: ['red', 'blue', 'yellow', 'green', 'black', 'white', 'purple', 'gray'],
-    figure: ['lineUP', 'triengleDOWN', 'lineLEFT', 'lineRIGHT'],
+    figure: ['UP', 'DOWN', 'LEFT', 'RIGHT'],
 };
 const DEFAULT_REQUIREMENTS = {
     char: {
