@@ -21,3 +21,54 @@ function convertObjectArrayToDOM(objArray, className) {
 
     return elemArr;
 }
+
+function createHeader(charPattern, emptyAngle = false) {
+    const header = [];
+
+    for (const char of charPattern) {
+        const char = document.createElement('div');
+        char.className = 'header';
+
+        header.push(char);
+    }
+
+    if (emptyAngle) {
+        const angle = document.createElement('div');
+        angle.className = 'header';
+
+        header.unshift(angle);
+        header.push(angle);
+    }
+
+    return header;
+}
+
+function createCard(header, sideHeader, password) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    
+    const row = document.createElement('div');
+    card.className = 'row';
+    for (const elem of header) {
+        row.appendChild(elem);    
+    }
+    card.appendChild(row);
+
+    for (const elem of sideHeader) {
+        const row = document.createElement('div');
+        card.className = 'row';
+
+        row.appendChild(elem);
+
+        for (let i = 0; i < 26; i++) { // 26 - number of letters in the English alphabet
+            row.appendChild( password.shift() );
+        }
+
+        row.appendChild(elem);
+        card.appendChild(row);
+    }
+
+    card.appendChild(row);
+
+    return card;
+}
