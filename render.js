@@ -26,10 +26,11 @@ function createHeader(charPattern, emptyAngle = false) {
     const header = [];
 
     for (const char of charPattern) {
-        const char = document.createElement('div');
-        char.className = 'header';
+        const elem = document.createElement('div');
+        elem.className = 'header';
+        elem.textContent = char;
 
-        header.push(char);
+        header.push(elem);
     }
 
     if (emptyAngle) {
