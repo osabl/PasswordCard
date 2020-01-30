@@ -65,7 +65,7 @@ function generateFullPassword(requirements, templates, chunkLength) {
     let fullPassword = [];
 
     for (let i = 0; i < numberOfChunks; i++) {
-        fullPassword = fullPassword.concat(getRandomChunk(requirements, templates, templ, chunkLength));
+        fullPassword = fullPassword.concat(getCorrectRandomChunk(requirements, templates, templ, chunkLength));
     }
 
     //cropping the array
@@ -74,28 +74,27 @@ function generateFullPassword(requirements, templates, chunkLength) {
     return fullPassword;
 }
 
-function getRandomChunk(requirements, templates, template, chunkLength) {
+function getRandomChunk(template, chunkLength) {
     const chunk = [];
+    const shuffleTempl = {};
 
-    let {
-        char,
-        color,
-        figure
-    } = template;
-    char = getShuffle(char);
-    color = getShuffle(color);
-    figure = getShuffle(figure);
+    //shuffle and copy template
+    for (const key in template) {
+        shuffleTempl[key] = getShuffle(template[key]);
+    }
 
     for (let i = 0; i < chunkLength; i++) {
-        const character = new Character(
-            pullRandom(char),
-            pullRandom(color),
-            pullRandom(figure)
-        );
+        const args = [];
+
+        for (const key in shuffleTempl) {
+            args.push( pullRandom(shuffleTempl[key]) );
+        }
+
+        const character = new Character(...args);
         chunk.push(character);
     }
 
-    return isChunkCorrect(chunk, requirements, templates) ? chunk : getRandomChunk(requirements, templates, template, chunkLength);
+    return chunk;
 }
 
 function pullRandom(array) {
@@ -109,6 +108,17 @@ function getShuffle(array) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+}
+
+// This function uses recursion
+function getCorrectRandomChunk(requirements, templates, template, chunkLength) {
+    const chunk = getRandomChunk(template, chunkLength);
+
+    if ( isChunkCorrect(chunk, requirements, templates) ) {
+        return chunk;
+    } else {
+        return getCorrectRandomChunk(requirements, templates, template, chunkLength);
+    }
 }
 
 //checking char only    
