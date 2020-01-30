@@ -49,15 +49,11 @@ function Template(requirements, templates) {
 }
 
 
-function generateHeader(charPattern, colorPattern, figurePattern) {
+function generateHeader(charPattern, color, figure) {
     const header = [];
 
     for (const char of charPattern) {
-        header.push(new Character(
-            char,
-            pullRandom(colorPattern),
-            pullRandom(figurePattern)
-        ));
+        header.push(new Character(char, color, figure));
     }
     return header;
 }
