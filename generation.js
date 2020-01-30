@@ -9,8 +9,8 @@ const DEFAULT_TEMPLATES = {
         numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
         symbols: ['!', '@', '#', '$', '%', '^', '&', '*'],
     },
-    color: ['red', 'blue', 'yellow', 'green', 'black', 'white', 'purple', 'gray'],
-    figure: ['UP', 'DOWN', 'LEFT', 'RIGHT'],
+    color: ['#0f6746', '#128487', '#bde528', '#f98a00', '#ba1b1b'],
+    figure: ['Top', 'Bottom', 'Left', 'Right'],
 };
 const DEFAULT_REQUIREMENTS = {
     char: {
