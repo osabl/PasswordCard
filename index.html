@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Card</title>
+</head>
+<body>
+    <form class="form">
+        <div class="requirements">
+            <label for="uppercase">Uppercase</label>
+            <input type="checkbox" name="char" id="uppercase" checked>
+
+            <label for="lowercase">Lowercase</label>
+            <input type="checkbox" name="char" id="lowercase" checked>
+
+            <label for="number">Numbers</label>
+            <input type="checkbox" name="char" id="number" checked>
+
+            <label for="symbol">Symbols</label>
+            <input type="checkbox" name="char" id="symbol" checked>
+
+            <label for="color">Colors</label>
+            <input type="checkbox" name="color" id="color">
+
+            <label for="figure">Figures</label>
+            <input type="checkbox" name="figure" id="figure">
+
+            <label for="chunkLength">Chunk length</label>
+            <input type="number" value="12" min="6" max="260" name="chunkLength" id="chunkLength">
+        </div>
+        <button class="button reset" type="reset">Reset to defaults</button>
+        <button class="button submit"type="submit">Generate Password Card</button>
+
+    </form>
+    <div id="card"></div>
+    <script src="generation.js"></script>
+</body>
+</html>
