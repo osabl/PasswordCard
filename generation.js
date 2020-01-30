@@ -4,20 +4,20 @@ const PASSWORD_LENGTH = 260;
 const DEFAULT_CHUNK_LENGTH = 12;
 const DEFAULT_TEMPLATES = {
     char: {
-        upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-        lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-        numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-        symbols: ['!', '@', '#', '$', '%', '^', '&', '*'],
+        uppercase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+        lowercase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+        number: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        symbol: ['!', '@', '#', '$', '%', '^', '&', '*'],
     },
     color: ['#0f6746', '#128487', '#bde528', '#f98a00', '#ba1b1b'],
     figure: ['Top', 'Bottom', 'Left', 'Right'],
 };
 const DEFAULT_REQUIREMENTS = {
     char: {
-        upperCase: true,
-        lowerCase: true,
-        numbers: true,
-        symbols: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        symbol: true,
     },
     color: true,
     figure: true,
