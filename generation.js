@@ -23,6 +23,7 @@ const DEFAULT_REQUIREMENTS = {
     figure: true,
 }
 
+
 function Character(char, color, figure) {
     this.char = char;
     this.color = color;
@@ -48,15 +49,6 @@ function Template(requirements, templates) {
     }
 }
 
-
-function generateHeader(charPattern, color, figure) {
-    const header = [];
-
-    for (const char of charPattern) {
-        header.push(new Character(char, color, figure));
-    }
-    return header;
-}
 
 function generateFullPassword(requirements, templates, chunkLength) {
     const templ = new Template(requirements, templates);
