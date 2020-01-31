@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.requirements input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* -----CARD----- */
+
 .card {
     display: table;
     text-align: center;
