@@ -24,8 +24,8 @@ generateBtn.addEventListener('click', (event) => {
     const password = generateFullPassword(requirements, DEFAULT_TEMPLATES, chunkLength);
 
     const passwordDOM = convertObjectArrayToDOM(password, 'cell');
-    const headerDOM = createHeader(DEFAULT_TEMPLATES.char.uppercase, true);
-    const sidehearedDOM = createHeader(DEFAULT_TEMPLATES.char.number, false);
+    const headerDOM = createHeader(DEFAULT_TEMPLATES.char.uppercase, 'header', true);
+    const sidehearedDOM = createHeader(DEFAULT_TEMPLATES.char.number, 'side-header', false);
     const card = createCard(headerDOM, sidehearedDOM, passwordDOM);
     cardField.appendChild(card);
 });
