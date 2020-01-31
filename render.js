@@ -56,9 +56,17 @@ function createCard(header, sideHeader, password) {
     }
     card.appendChild(startRow);
 
+    let evenOrUneven = 'uneven';
+
     for (const elem of sideHeader) {
+        if (evenOrUneven == 'uneven') {
+            evenOrUneven = 'even';
+        } else {
+            evenOrUneven = 'uneven';
+        }
+
         const row = document.createElement('div');
-        row.className = 'row';
+        row.className = `row ${evenOrUneven}`;
 
         row.appendChild(elem);
 
