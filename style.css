@@ -6,12 +6,81 @@
 
 .card {
     display: table;
+    text-align: center;
 }
 
 .row {
     display: table-row;
 }
 
+.header {
+    display: table-cell;
+    vertical-align: middle;
+
+    width: 20px;
+    height: 25px;
+
+    border: 1px solid black;
+}
+
+.side-header {
+    display: table-cell;
+    vertical-align: middle;
+
+    width: 25px;
+    height: 20px;
+
+    border: 1px solid black;
+}
+
 .cell {
     display: table-cell;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid rgb(58, 57, 57);
+
+    background-color: attr(data-color color);
+}
+
+/* -----COLOR----- */
+
+[data-color="first"] {
+    color: green;
+}
+[data-color="second"] {
+    color: red;
+}
+[data-color="third"] {
+    color: blue;
+}
+[data-color="fourth"] {
+    color: purple;
+}
+[data-color="fifth"] {
+    color: black;
+}
+
+/* -----EXTRA COLOR----- */
+
+[data-extra-color="first"] {
+    border-width: 2px;
+    border-color: green;
+}
+[data-extra-color="second"] {
+    border-width: 2px;
+    border-color: red;
+}
+[data-extra-color="third"] {
+    border-width: 2px;
+    border-color: blue;
+}
+[data-extra-color="fourth"] {
+    border-width: 2px;
+    border-color: purple;
+}
+[data-extra-color="fifth"] {
+    border-width: 2px;
+    border-color: black;
 }
