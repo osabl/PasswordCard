@@ -27,14 +27,16 @@
             <label for="figure">Figures</label>
             <input type="checkbox" name="figure" id="figure">
 
-            <label for="chunkLength">Chunk length</label>
-            <input type="number" value="12" min="6" max="260" name="chunkLength" id="chunkLength">
+            <label for="chunk-length">Chunk length</label>
+            <input type="number" value="12" min="6" max="260" name="chunk-length" id="chunk-length">
         </div>
         <button class="button reset" type="reset">Reset to defaults</button>
-        <button class="button submit"type="submit">Generate Password Card</button>
+        <button id="generate-btn" class="button submit"type="submit">Generate Password Card</button>
 
     </form>
-    <div id="card"></div>
+    <div id="card-field"></div>
     <script src="generation.js"></script>
+    <script src="render.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
