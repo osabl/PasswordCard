@@ -22,12 +22,12 @@ function convertObjectArrayToDOM(objArray, className) {
     return elemArr;
 }
 
-function createHeader(charPattern, emptyAngle = false) {
+function createHeader(charPattern, className, emptyAngle = false) {
     const header = [];
 
     for (const char of charPattern) {
         const elem = document.createElement('div');
-        elem.className = 'header';
+        elem.className = className;
         elem.textContent = char;
 
         header.push(elem);
