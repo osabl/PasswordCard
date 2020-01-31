@@ -1,5 +1,6 @@
 const generateBtn = document.querySelector('#generate-btn');
 const cardField = document.querySelector('#card-field');
+const checkboxes = document.querySelectorAll('input[name="requirements"]');
 
 generateBtn.addEventListener('click', (event) => {
     event.preventDefault();
@@ -29,3 +30,17 @@ generateBtn.addEventListener('click', (event) => {
     const card = createCard(headerDOM, sidehearedDOM, passwordDOM);
     cardField.appendChild(card);
 });
+
+for (const checkbox of checkboxes) {
+    checkbox.addEventListener('click', () => {
+        for (const check of checkboxes) {
+            if (check.id == 'color') { // ignore because color depends on the char
+                continue;
+            } else if (check.checked) {
+                generateBtn.disabled = false;
+                return;
+            }
+        }
+        generateBtn.disabled = true;
+    })
+}
