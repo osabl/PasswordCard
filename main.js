@@ -17,7 +17,7 @@ generateBtn.addEventListener('click', (event) => {
             symbol: document.querySelector('#symbol').checked,
         },
         color: document.querySelector('#color').checked,
-        figure: document.querySelector('#figure').checked,
+        extraColor: document.querySelector('#extraColor').checked,
     }
     const chunkLength = document.querySelector('#chunk-length').value;
 
