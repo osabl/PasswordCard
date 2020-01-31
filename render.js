@@ -36,9 +36,10 @@ function createHeader(charPattern, emptyAngle = false) {
     if (emptyAngle) {
         const angle = document.createElement('div');
         angle.className = 'header';
+        const copy = angle.cloneNode(true);
 
         header.unshift(angle);
-        header.push(angle);
+        header.push(copy);
     }
 
     return header;
@@ -69,7 +70,8 @@ function createCard(header, sideHeader, password) {
         card.appendChild(row);
     }
 
-    card.appendChild(row);
+    const endRow = startRow.cloneNode(true);
+    card.appendChild(endRow);
 
     return card;
 }
