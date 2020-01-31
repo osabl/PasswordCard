@@ -76,13 +76,13 @@ function getRandomChunk(template, chunkLength) {
     }
 
     for (let i = 0; i < chunkLength; i++) {
-        const args = [];
+        const args = {};
 
         for (const key in shuffleTempl) {
-            args.push( pullRandom(shuffleTempl[key]) );
+            args[key] = pullRandom(shuffleTempl[key]);
         }
 
-        const character = new Character(...args);
+        const character = new Character(args.char, args.color, args.extraColor);
         chunk.push(character);
     }
 
