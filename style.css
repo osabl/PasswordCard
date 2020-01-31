@@ -4,20 +4,16 @@
     box-sizing: border-box;
 }
 
-.requirements input {
-    display: block;
-    margin-bottom: 10px;
-}
-
 /* -----CARD----- */
 
 .card {
     display: table;
-    text-align: center;
-}
+    border: 3px solid black;
+    border-radius: 10px;
+    
+    background-color: rgb(19, 119, 177);
 
-.row {
-    display: table-row;
+    text-align: center;
 }
 
 .header {
@@ -25,9 +21,9 @@
     vertical-align: middle;
 
     width: 20px;
-    height: 25px;
+    height: 35px;
 
-    border: 1px solid black;
+    color: white;
 }
 
 .side-header {
@@ -35,20 +31,30 @@
     vertical-align: middle;
 
     width: 25px;
-    height: 20px;
+    height: 30px;
 
-    border: 1px solid black;
+    color: white;
+}
+
+.row {
+    display: table-row;
+}
+
+.even .cell {
+    background-color: white;
+}
+
+.uneven .cell {
+    background-color: rgb(236, 253, 253);
 }
 
 .cell {
     display: table-cell;
     vertical-align: middle;
     width: 20px;
-    height: 20px;
+    height: 30px;
 
     border: 1px solid rgb(58, 57, 57);
-
-    background-color: attr(data-color color);
 }
 
 /* -----COLOR----- */
@@ -74,20 +80,25 @@
 [data-extra-color="first"] {
     border-width: 2px;
     border-color: green;
+    border-radius: 5px;
 }
 [data-extra-color="second"] {
     border-width: 2px;
     border-color: red;
+    border-radius: 5px;
 }
 [data-extra-color="third"] {
     border-width: 2px;
     border-color: blue;
+    border-radius: 5px;
 }
 [data-extra-color="fourth"] {
     border-width: 2px;
     border-color: purple;
+    border-radius: 5px;
 }
 [data-extra-color="fifth"] {
     border-width: 2px;
     border-color: black;
+    border-radius: 5px;
 }
