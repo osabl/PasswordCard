@@ -9,8 +9,8 @@ const DEFAULT_TEMPLATES = {
         number: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
         symbol: ['!', '@', '#', '$', '%', '^', '&', '*'],
     },
-    color: ['#0f6746', '#128487', '#bde528', '#f98a00', '#ba1b1b'],
-    figure: ['Top', 'Bottom', 'Left', 'Right'],
+    color: ['first', 'second', 'third', 'fourth', 'fifth'],
+    extraColor: ['first', 'second', 'third', 'fourth', 'fifth'],
 };
 const DEFAULT_REQUIREMENTS = {
     char: {
@@ -20,14 +20,14 @@ const DEFAULT_REQUIREMENTS = {
         symbol: true,
     },
     color: true,
-    figure: true,
+    extraColor: true,
 }
 
 
-function Character(char, color, figure) {
+function Character(char, color, extraColor) {
     this.char = char;
     this.color = color;
-    this.figure = figure;
+    this.extraColor = extraColor;
 }
 
 function Template(requirements, templates) {
