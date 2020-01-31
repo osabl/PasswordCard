@@ -12,8 +12,8 @@ function convertObjectArrayToDOM(objArray, className) {
         if (obj.color) {
             elem.setAttribute('data-color', `${obj.color}`);
         }
-        if (obj.figure) {
-            elem.setAttribute('data-figure', `${obj.figure}`);
+        if (obj.extraColor) {
+            elem.setAttribute('data-extra-color', `${obj.extraColor}`);
         }
 
         elemArr.push(elem);
