@@ -66,7 +66,8 @@ function createCard(header, sideHeader, password) {
             row.appendChild( password.shift() );
         }
 
-        row.appendChild(elem);
+        const copyElem = elem.cloneNode(true);
+        row.appendChild(copyElem);
         card.appendChild(row);
     }
 
