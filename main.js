@@ -3,6 +3,11 @@ const cardField = document.querySelector('#card-field');
 
 generateBtn.addEventListener('click', (event) => {
     event.preventDefault();
+    
+    let oldCard = document.querySelector('.card');
+    if (oldCard) {
+        oldCard.remove();
+    }
 
     const requirements = {
         char: {
