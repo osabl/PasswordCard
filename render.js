@@ -47,17 +47,17 @@ function createHeader(charPattern, emptyAngle = false) {
 function createCard(header, sideHeader, password) {
     const card = document.createElement('div');
     card.className = 'card';
-    
-    const row = document.createElement('div');
-    card.className = 'row';
+
+    const startRow = document.createElement('div');
+    startRow.className = 'row';
     for (const elem of header) {
-        row.appendChild(elem);    
+        startRow.appendChild(elem);
     }
-    card.appendChild(row);
+    card.appendChild(startRow);
 
     for (const elem of sideHeader) {
         const row = document.createElement('div');
-        card.className = 'row';
+        row.className = 'row';
 
         row.appendChild(elem);
 
