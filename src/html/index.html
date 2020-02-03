@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,53 @@
     <link rel="stylesheet" href="/src/css/style.css">
     <title>Password Card</title>
 </head>
+
 <body>
-    <form class="form">
-        <div class="requirements">
-            <label for="uppercase">Uppercase</label>
-            <input type="checkbox" name="requirements" id="uppercase" checked>
+    <div class="card-field">
+        <div class="card-field-inner">
+            <div class="front">
+                <form class="form">
+                    <div class="requirements">
+                        <div class="checkbox">
+                            <input type="checkbox" name="requirements" id="uppercase" checked>
+                            <label for="uppercase">Uppercase</label>
 
-            <label for="lowercase">Lowercase</label>
-            <input type="checkbox" name="requirements" id="lowercase" checked>
+                            <input type="checkbox" name="requirements" id="lowercase" checked>
+                            <label for="lowercase">Lowercase</label>
 
-            <label for="number">Numbers</label>
-            <input type="checkbox" name="requirements" id="number" checked>
+                            <input type="checkbox" name="requirements" id="number" checked>
+                            <label for="number">Numbers</label>
 
-            <label for="symbol">Symbols</label>
-            <input type="checkbox" name="requirements" id="symbol" checked>
+                            <input type="checkbox" name="requirements" id="symbol" checked>
+                            <label for="symbol">Symbols</label>
 
-            <label for="color">Color chars</label>
-            <input type="checkbox" name="requirements" id="color">
+                            <input type="checkbox" name="requirements" id="color">
+                            <label for="color">Color chars</label>
 
-            <label for="extraColor">Extra color</label>
-            <input type="checkbox" name="requirements" id="extraColor">
+                            <input type="checkbox" name="requirements" id="extraColor">
+                            <label for="extraColor">Extra color</label>
+                        </div>
 
-            <label for="chunk-length">Chunk length</label>
-            <input type="number" value="12" min="4" max="260" name="chunk-length" id="chunk-length" required>
+                        <div class="options">
+                            <label class="chunk-length-label" for="chunk-length">Chunk length
+                                <input type="number" value="12" min="4" max="260" name="chunk-length" id="chunk-length"
+                                    required>
+                            </label>
+                            <button class="button reset" type="reset">Reset to defaults</button>
+                        </div>
+                    </div>
+                    <div class="generate">
+                        <button id="generate-btn" class="button submit" type="submit">Generate Password Card</button>
+                    </div>
+                </form>
+            </div>
+            <div class="back"></div>
         </div>
-        <button class="button reset" type="reset">Reset to defaults</button>
-        <button id="generate-btn" class="button submit"type="submit">Generate Password Card</button>
+    </div>
 
-    </form>
-    <div id="card-field"></div>
     <script src="/src/js/generation.js"></script>
     <script src="/src/js/render.js"></script>
     <script src="/src/js/main.js"></script>
 </body>
+
 </html>
