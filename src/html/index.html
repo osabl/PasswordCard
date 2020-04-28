@@ -10,45 +10,47 @@
 </head>
 
 <body>
-    <div class="card-field">
-        <div class="card-field-inner">
-            <div class="front">
-                <form class="form">
-                    <div class="requirements">
-                        <div class="checkbox">
-                            <input type="checkbox" name="requirements" id="uppercase" checked>
-                            <label for="uppercase">Uppercase</label>
-
-                            <input type="checkbox" name="requirements" id="lowercase" checked>
-                            <label for="lowercase">Lowercase</label>
-
-                            <input type="checkbox" name="requirements" id="number" checked>
-                            <label for="number">Numbers</label>
-
-                            <input type="checkbox" name="requirements" id="symbol" checked>
-                            <label for="symbol">Symbols</label>
-
-                            <input type="checkbox" name="requirements" id="color">
-                            <label for="color">Color chars</label>
-
-                            <input type="checkbox" name="requirements" id="extraColor">
-                            <label for="extraColor">Extra color</label>
+    <div class="wrap">
+        <div class="card-field">
+            <div class="card-field-inner">
+                <div class="front">
+                    <form class="form">
+                        <div class="requirements">
+                            <div class="checkbox">
+                                <input type="checkbox" name="requirements" id="uppercase" checked>
+                                <label for="uppercase">Uppercase</label>
+    
+                                <input type="checkbox" name="requirements" id="lowercase" checked>
+                                <label for="lowercase">Lowercase</label>
+    
+                                <input type="checkbox" name="requirements" id="number" checked>
+                                <label for="number">Numbers</label>
+    
+                                <input type="checkbox" name="requirements" id="symbol" checked>
+                                <label for="symbol">Symbols</label>
+    
+                                <input type="checkbox" name="requirements" id="color">
+                                <label for="color">Color chars</label>
+    
+                                <input type="checkbox" name="requirements" id="extraColor">
+                                <label for="extraColor">Extra color</label>
+                            </div>
+    
+                            <div class="options">
+                                <label class="chunk-length-label" for="chunk-length">Chunk length
+                                    <input type="number" value="12" min="4" max="260" name="chunk-length" id="chunk-length"
+                                        required>
+                                </label>
+                                <button class="button reset" type="reset">Reset</button>
+                            </div>
                         </div>
-
-                        <div class="options">
-                            <label class="chunk-length-label" for="chunk-length">Chunk length
-                                <input type="number" value="12" min="4" max="260" name="chunk-length" id="chunk-length"
-                                    required>
-                            </label>
-                            <button class="button reset" type="reset">Reset</button>
+                        <div class="generate">
+                            <button id="generate-btn" class="button submit" type="submit">Generate Password Card</button>
                         </div>
-                    </div>
-                    <div class="generate">
-                        <button id="generate-btn" class="button submit" type="submit">Generate Password Card</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="back"></div>
             </div>
-            <div class="back"></div>
         </div>
     </div>
 
