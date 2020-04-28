@@ -140,11 +140,14 @@ input[type="number"] {
 
 /* -----CARD-FIELD----- */
 
-.card-field {
+.wrap {
     position: absolute;
-    top: calc(50% - 50px);
-    left: calc(50% - 50px);
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.card-field {
     margin: 50px;
     transition: 1s;
     width: 566px;
