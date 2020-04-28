@@ -6,6 +6,8 @@
 
 Experts always recommend using passwords consisting of a long combination of letters and numbers and changing one’s passwords regularly. The problem in everyday life is that users find themselves having to remember too many different passwords. It simply becomes impossible to apply even the most basic security rules.
 
+## [Demo](https://password-card-generator.netlify.app/)
+
 ### Password Card
 
 Password card enables to generate long, complex—and therefore secure—passwords very easily without the worry of remembering them.
