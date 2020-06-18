@@ -2,14 +2,215 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+body {
+    background: url(/src/img/noise_background.png);
+}
+
+/* -----FORM----- */
+
+.form {
+    border: 3px solid rgb(91, 95, 85);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 252, 252);
+}
+
+input[type="checkbox"]:checked + label:hover {
+    background-color: rgba(18, 198, 230, 0.815);
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: rgba(65, 192, 192, 0.493);
+    text-decoration: none;
+}
+
+input[type="checkbox"] + label:hover {
+    cursor: pointer;
+    background-color: rgba(253, 98, 98, 0.37);
+}
+
+input[type="checkbox"] + label {
+    border: 1px solid black;
+    background-color: rgba(255, 122, 122, 0.3);
+    text-decoration: line-through;
+    margin: 20px 40px;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+
+    text-align: center;
+    line-height: 50px;
+
+    transition: 0.5s;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin: 20px 0;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+input[type="number"] {
+    width: 45px;
+    text-align: center;
+}
+
+.chunk-length-label:hover {
+    background-color: rgba(172, 172, 172, 0.253);
+}
+
+.chunk-length-label {
+    box-sizing: content-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    height: 30px;
+    line-height: 30px;
+    transition: 0.5s;
+}
+
+.button.reset {
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    background-color: rgb(255, 236, 220);
+}
+.button.reset:hover {
+    background-color: rgb(255, 221, 196);
+}
+.button.reset:active {
+    background-color: rgb(255, 202, 162);
+}
+
+
+.generate {
+    margin: 20px;
+
+    display: flex;
+    text-align: center;
+}
+
+.button.submit {
+    margin: 20px auto;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgb(198, 255, 160);
+}
+.button.submit:hover {
+    background-color: rgb(163, 255, 102);
+}
+.button.submit:active {
+    background-color: rgb(131, 255, 49);
+}
+.button.submit:disabled {
+    background-color: rgba(236, 125, 82, 0.349);
+    text-decoration: line-through;
+}
+
+.button {
+    border-radius: 10px;
+    border: 1px solid black;
+    color: rgb(20, 20, 20);
+
+    transition: 0.3s;
+}
+
+
+/* -----CARD-FIELD----- */
+
+.wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-field {
+    margin: 50px;
+    transition: 1s;
+    width: 566px;
+    height: 376px;
+    perspective: 1000px;
+
+    background-color: transparent;
+}
+
+.card-field-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s;
+    transform-style: preserve-3d;
+    transform-origin: 100% 50%;
+
+    
+    border-radius: 10px;
+}
+
+.front, .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateX(180deg);
+}
+
+.card-field.scope .card-field-inner {
+    box-shadow: 0px 30px 3vw 1vw rgba(0, 0, 0, 0.3),
+    0px -30px 3vw 1vw rgba(0, 0, 0, 0.3),
+    30px 0px 3vw 1vw rgba(0, 0, 0, 0.3),
+    -30px 0px 3vw 1vw rgba(0, 0, 0, 0.3);
+}
+
+.scope {
+    transform: scale(1.2);
+}
+
+.flip {
+    transform: rotateX(-180deg);
 }
 
 /* -----CARD----- */
 
 .card {
-    margin: 30px;
     display: table;
-    border: 3px solid black;
+    border-top: 3px solid green;
+    border-bottom: 3px solid blue;
+    border-left: 3px solid red;
+    border-right: 3px solid purple;
+
     border-radius: 10px;
     
     background-color: rgb(19, 119, 177);
@@ -31,7 +232,7 @@
     display: table-cell;
     vertical-align: middle;
 
-    width: 25px;
+    width: 20px;
     height: 30px;
 
     color: white;
