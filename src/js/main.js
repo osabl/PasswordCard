@@ -32,6 +32,7 @@ generateBtn.addEventListener('click', (event) => {
         const headerDOM = createHeader(DEFAULT_TEMPLATES.char.uppercase, 'header', true);
         const sidehearedDOM = createHeader(DEFAULT_TEMPLATES.char.number, 'side-header', false);
         const card = createCard(headerDOM, sidehearedDOM, passwordDOM);
+      
         cardField_back.appendChild(card);
         scope();
         setTimeout(flip, 1500);
@@ -42,8 +43,8 @@ generateBtn.addEventListener('click', (event) => {
 for (const checkbox of checkboxes) {
     checkbox.addEventListener('click', checkingBox);
 }
-reset.addEventListener('click', () => setTimeout(checkingBox, 1)); // crutch (does not work without a timeout)
 
+reset.addEventListener('click', () => setTimeout(checkingBox, 1)); // crutch (does not work without a timeout)
 
 function checkingBox() {
     for (const check of checkboxes) {
